@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import{ io } from 'socket.io-client';
 
 function App() {
 
-  const socket = io('ws://localhost:4010')
- 
-  socket.on('connection', (socket) => {
-    console.log(socket.id);
-  });
+  const [connectedSocket, setConnectedSocket] = useState<any>(false);
+  const [message, setMessage] = useState<string>('');
 
-  
+  const onEmitButtonHandler = () => {
+    connectedSocket.emit('send', message);
+  }
+
+  useEffect(() => {
+    if(!connectedSocket) {
+      const socket = io('http://localhost:4010')
+      setConnectedSocket(socket);
+    }
+    else {
+      connectedSocket.on('receive', (message:string) => {
+        console.log(message);
+      });
+    }
+  }, [])
+
   return (
-    <div></div>
+    <div>
+      <input onChange={(event) => setMessage(event.target.value)} />
+      <button onClick={onEmitButtonHandler}>전송</button>
+    </div>
   );
 }
 
