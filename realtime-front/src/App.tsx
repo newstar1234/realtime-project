@@ -2,26 +2,30 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import{ io } from 'socket.io-client';
+import { socket } from './utills/socket';
+import { log } from 'console';
 
 function App() {
 
-  const [connectedSocket, setConnectedSocket] = useState<any>(false);
+  
   const [message, setMessage] = useState<string>('');
+  const [isConnected, setIsConnected] = useState<boolean>(socket.connected);
 
   const onEmitButtonHandler = () => {
-    connectedSocket.emit('send', message);
+    socket.emit('send', message);
   }
 
   useEffect(() => {
-    if(!connectedSocket) {
-      const socket = io('http://localhost:4010')
-      setConnectedSocket(socket);
+    const onConnected = () => {
+      console.log(socket.id);
+      setIsConnected(true);
     }
-    else {
-      connectedSocket.on('receive', (message:string) => {
-        console.log(message);
-      });
+    const onDisconnect = () => {
+      setIsConnected(false);
     }
+
+    socket.on('connect', onConnected);
+    socket.on('receive', message => console.log(message));
   }, [])
 
   return (
