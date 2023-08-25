@@ -1,0 +1,74 @@
+#main-wraaper {
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 10, 0, 0.37);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-title-box {
+    display: flex;
+    justify-content: center;
+}
+
+.main-title{
+    padding-bottom: 20px;
+
+    color: rgba(0,0,0,1);
+
+    font-size: 42px;
+    font-weight: 600;
+
+    text-align: center;
+
+    font-size: 45px;
+}
+
+.main-input-box {
+    display: flex;
+    justify-content: center;
+}
+
+.main-input {
+    width: 20vw;
+    height: 24px;
+
+    outline: none;
+    border: none;
+}
+
+.main-submit-box {
+    display: flex;
+    justify-content: center;
+}
+
+.main-submit-button {
+    border-radius: 32px;
+    padding: 16px;
+
+    width: 10vw;
+    
+    display: flex;
+    justify-content: center;
+
+    background-color: rgba(0,0,0,0.3);
+
+    color: rgba(255,255,255,1);
+
+    font-size: 16px;
+}
+
+.main-submit-button:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+}
