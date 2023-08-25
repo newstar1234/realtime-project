@@ -13,9 +13,9 @@ public class MessageController {
 
     private final SimpMessagingTemplate messagingTemplate;
 
-    @PostMapping("/send")
+    @PostMapping("/send") // 클라이언트가 메세지를 보낼 경로
     public void send(@RequestBody String message) {
-        String detination = "/topic";
+        String detination = "/topic"; // 메시지를 구독하는 클라이언트에게 전달할 경로
         messagingTemplate.convertAndSend(detination, "message!!!");
     }
     
