@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-import{ io } from 'socket.io-client';
 import { socket } from './utills/socket';
-import { log } from 'console';
 
 function App() {
 
-  
   const [message, setMessage] = useState<string>('');
   const [isConnected, setIsConnected] = useState<boolean>(socket.connected);
 
@@ -15,11 +12,17 @@ function App() {
     socket.emit('send', message);
   }
 
+  let flag = true;
   useEffect(() => {
+    if (flag) {
+      flag = false;
+      return;
+    }
     const onConnected = () => {
       console.log(socket.id);
       setIsConnected(true);
-    }
+    };
+
     const onDisconnect = () => {
       setIsConnected(false);
     }
