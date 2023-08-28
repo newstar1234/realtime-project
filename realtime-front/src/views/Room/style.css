@@ -31,8 +31,13 @@
 }
 
 .room-container {
-    height: 80vh;
+    padding: 1vh;
+    height: 76vh;
     overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .room-footer {
@@ -71,4 +76,72 @@
     cursor: pointer;
     background-color: rgba(0,0,0,0.5);
     
+}
+
+.message-box-mine {
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.message-mine {
+    border-radius: 10px;
+    padding: 8px;
+
+    max-width: 30vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+
+    color: rgba(255,255,255,1);
+    background-color: rgba(19, 120, 85, 0.8);
+}
+
+.message-datetime {
+    margin: 0 4px;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    font-size: 12px;
+}
+
+.message-box-others {
+    display: flex;
+}
+
+.message-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.message-nickname {
+    color: rgb(0,0,0,1);
+
+    font-size: 14px;
+}
+
+.message-container-others {
+    display: flex;
+}
+
+.message-other{
+    border-radius: 10px;
+    padding: 8px;
+
+    max-width: 30vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+
+    color: rgba(255,255,255,1);
+    background-color: rgba(100, 120, 85, 0.8);
 }
