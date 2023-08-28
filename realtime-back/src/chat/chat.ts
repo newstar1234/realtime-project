@@ -10,7 +10,7 @@ export class Chat {
   server: Server
   logger = new Logger();
 
-// 특정사람한테 메세지 보내기 전에 조인하기  //
+// 메세지 보내기 전에 조인하기  //
   @SubscribeMessage('join')
   handleJoin(
     @MessageBody() room: string,
