@@ -15,5 +15,60 @@
 }
 
 .room-number {
+    font-size: 24px;
+    font-weight: 600;
+}
 
+.room-back-button {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(200,0,0,0.7);
+}
+
+.room-back-button:hover {
+    cursor: pointer;
+    color: rgba(200,0,0,0.3);
+}
+
+.room-container {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.room-footer {
+    padding: 0 20px;
+    height: 10vh;
+    
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background-color: rgba(0,0,0,0.1);
+}
+
+.room-send-input {
+    flex: 1;
+    height: 4vh;
+
+    border: none;
+    outline: none;
+}
+
+.room-send-button {
+    height: 4vh;
+    width: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,0.8);
+    color: rgba(255,255,255,1);
+    border-radius: 13px;
+}
+
+.room-send-button:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+    
 }
