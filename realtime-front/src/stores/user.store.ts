@@ -6,7 +6,7 @@ interface User {
     nickname: string;
     setNickname: (nickname:string) => void;
 }
-
+// 초기값 설정해줘야함
 const useUserStore = create<User>(set => ({
     id: uuid(),
     nickname: '',

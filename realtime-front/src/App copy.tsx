@@ -76,15 +76,15 @@ function App() {
           <input onChange={(event) => setRoomMessage(event.target.value)} />
           <button onClick={onRoomEmitButtonHandler}>보내기</button>  
           <div>
-            {roomMessageList.map(message => <div style={{color: 'rgba(0,200,0,200)'}} >{message}</div>)}
+            {roomMessageList.map(message => <div style={{color: 'rgba(0,200,0,0.7)'}} >{message}</div>)}
           </div>
         </div>  
       )  
     : (
       <div>
-          <input onChange={(event) => setRoom(event.target.value)} />
-          <button onClick={onJoinButtonHandler}>조인</button>
-        </div>
+        <input onChange={(event) => setRoom(event.target.value)} />
+        <button onClick={onJoinButtonHandler}>조인</button>
+      </div>
       )
     }
       <input onChange={(event) => setNickname(event.target.value)}/>

@@ -20,7 +20,7 @@ export default function Main() {
   // description : 확인 버튼 클릭 이벤트 처리 함수 //
   const onSubmitClickHandler = () => {
     if(!nickname) {
-      // alert('닉네임을 입력해주세요.');
+      alert('닉네임을 입력해주세요.');
       return; 
       }
     setPath('/enter');
